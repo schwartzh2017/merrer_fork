@@ -3,12 +3,16 @@
   
 from operator import itemgetter 
 import sys 
+
+#first sort the input so the count can be done correctly
+lines = sys.stdin.readlines()
+lines.sort()
   
 current_word = None
 current_count = 0
 word = None
 
-for line in sys.stdin: 
+for line in lines: 
     line = line.strip() 
     word, count = line.split('\t', 1) 
     try: 
@@ -24,3 +28,4 @@ for line in sys.stdin:
         current_word = word 
 if current_word == word: 
     print('%s\t%s' % (current_word, current_count))
+

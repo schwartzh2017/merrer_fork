@@ -6,4 +6,6 @@ for line in sys.stdin:
     line = line.strip() 
     words = line.split() 
     for word in words:
-        print('%s\t%s' % (word, 1))
+        #make sure only text is counted
+        if word.isalpha():
+            print('%s\t%s' % (word, 1))
